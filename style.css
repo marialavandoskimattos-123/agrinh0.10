@@ -1,0 +1,100 @@
+:root {
+    --primary: #2d5a27;
+    --secondary: #8bc34a;
+    --text: #1a3022;
+    --bg-overlay: rgba(255, 255, 255, 0.8);
+    /* Imagem de plantas gerada */
+    --plant-bg: url('http://googleusercontent.com/image_generation_content/1');
+}
+
+.dark-mode {
+    --primary: #8bc34a;
+    --secondary: #2d5a27;
+    --text: #f0f4f0;
+    --bg-overlay: rgba(0, 0, 0, 0.7);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+    background-color: #f0f4f0;
+    color: var(--text);
+    transition: 0.4s;
+    /* Fundo de plantas em todo o site */
+    background-image: var(--plant-bg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+    background: var(--bg-overlay);
+    backdrop-filter: blur(5px);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+.logo span { color: var(--secondary); }
+
+.hero-plants {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Efeito de Vidro sobre as plantas */
+.glass-card {
+    background: var(--bg-overlay);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.input-area { margin-top: 25px; display: flex; gap: 10px; justify-content: center; }
+
+input {
+    padding: 12px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    outline: none;
+}
+
+button {
+    padding: 12px 24px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover { background: var(--secondary); transform: scale(1.05); }
+
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 5%;
+}
+
+.plant-card {
+    background: var(--bg-overlay);
+    padding: 30px;
+    border-radius: 15px;
+    width: 320px;
+    border-top: 5px solid var(--secondary);
+}
+
+@media (max-width: 600px) { .input-area { flex-direction: column; } }
